@@ -3,7 +3,18 @@ import Container from '../../atoms/container';
 import COLORS from '../../../shared/colors';
 import { SearchContainer, Input } from './style';
 
-const Search = () => {
+const Search = ({ searchUsers }) => {
+  const [searchValue, setSearchValue] = React.useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    searchUsers(searchValue);
+  };
+
+  const handleChange = (event) => {
+    setSearchValue(event.target.value);
+  };
+
   return (
     <>
       <Container
@@ -15,7 +26,14 @@ const Search = () => {
         borderRadius={5}
       >
         <SearchContainer>
-          <Input type="text" placeholder="검색" />
+          <form onSubmit={handleSubmit}>
+            <Input
+              type="text"
+              placeholder="검색"
+              onChange={handleChange}
+              value={searchValue}
+            />
+          </form>
         </SearchContainer>
       </Container>
     </>
