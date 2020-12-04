@@ -10,8 +10,17 @@ export const ContactProvider = ({ children }) => {
       try {
         const response = await fetch('http://localhost:4000/user/list');
         const results = await response.json();
-        setUsers(results);
-        window.localStorage.setItem('users', JSON.stringify(results));
+        const sortedResults = results.sort((a, b) =>
+          a.name < b.name ? -1 : a.name > b.name ? 1 : 0,
+        );
+        const initialUsers = sortedResults.map((result) => {
+          return {
+            ...result,
+            isFavorite: false,
+          };
+        });
+        setUsers(initialUsers);
+        window.localStorage.setItem('users', JSON.stringify(initialUsers));
       } catch (error) {
         throw new Error(error);
       }
