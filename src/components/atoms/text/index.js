@@ -11,7 +11,7 @@ import {
 import COLORS from '../../../shared/colors';
 
 export default styled.span`
-  color: ${COLORS.white};
+  color: ${COLORS.black};
 
   ${fontSize};
   ${fontWeight};
