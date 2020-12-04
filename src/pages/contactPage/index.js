@@ -2,7 +2,6 @@ import React from 'react';
 import Container from '../../components/atoms/container';
 import Text from '../../components/atoms/text';
 import Search from '../../components/contact/search';
-import COLORS from '../../shared/colors';
 
 const ContactPage = () => {
   return (
@@ -12,6 +11,7 @@ const ContactPage = () => {
           연락처
         </Text>
         <Search />
+        {/* <User /> */}
       </Container>
     </Container>
   );
