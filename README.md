@@ -48,3 +48,8 @@ $ npm run run
 |   +-- index.js
 .
 ```
+
+## 작업 내용
+
+[Issues](https://github.com/junjangsee/nudgecode-codingtest/issues?q=is%3Aissue+is%3Aclosed)
+[PullRequests](https://github.com/junjangsee/nudgecode-codingtest/pulls?q=is%3Apr+is%3Aclosed)
