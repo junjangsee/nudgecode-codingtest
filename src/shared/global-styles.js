@@ -145,7 +145,9 @@ export default createGlobalStyle`
     font-weight: bold;
   }
   input {
-    outline: none;
+    outline: 0;
+    border: none;
+    background-color: inherit;
   }
   button {
     border: none;

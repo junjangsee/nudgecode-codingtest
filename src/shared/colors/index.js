@@ -1,6 +1,7 @@
 const COLORS = {
   white: '#ffffff',
-  black: '#000000',
+  black: '#232323',
+  gray: '#DFDFDF',
 };
 
 export default COLORS;
