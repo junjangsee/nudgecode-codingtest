@@ -8,9 +8,7 @@ const UserListContainer = () => {
   const handleToggled = (name, favorite) => {
     const currentUsers = [...users];
     const user = currentUsers.find((user) => user.name === name);
-    console.log(user);
     user['isFavorite'] = favorite;
-    console.log(user);
     const newUsers = currentUsers;
     setUsers(newUsers);
 
