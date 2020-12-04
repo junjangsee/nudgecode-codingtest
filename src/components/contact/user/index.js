@@ -12,6 +12,13 @@ const User = ({
 }) => {
   const [favorite, setFavorite] = React.useState(isFavorite);
 
+  const makePhoneNumber = (phoneNumber) => {
+    return phoneNumber.replace(
+      /(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/,
+      '$1-$2-$3',
+    );
+  };
+
   const handleToggleFavorite = () => {
     setFavorite(!favorite);
     handleToggled(name, favorite);
@@ -30,7 +37,7 @@ const User = ({
                 {name}
               </Text>
               <Text fontSize={15} fontWeight={400}>
-                {phoneNumber}
+                {makePhoneNumber(phoneNumber)}
               </Text>
             </ProfileContent>
           </Container>
