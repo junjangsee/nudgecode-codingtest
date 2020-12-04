@@ -3,8 +3,19 @@ import Container from '../../atoms/container';
 import Text from '../../atoms/text';
 import { ProfileContainer, ProfileContent, FavoriteContainer } from './style';
 
-const User = ({ name, phoneNumber, profileImage }) => {
-  const isFavorite = true;
+const User = ({
+  name,
+  phoneNumber,
+  profileImage,
+  isFavorite,
+  handleToggled,
+}) => {
+  const [favorite, setFavorite] = React.useState(isFavorite);
+
+  const handleToggleFavorite = () => {
+    setFavorite(!favorite);
+    handleToggled(name, favorite);
+  };
 
   return (
     <>
@@ -12,22 +23,23 @@ const User = ({ name, phoneNumber, profileImage }) => {
         <ProfileContainer flex>
           <Container flex>
             <Container width={48} height={48} margin="0 15px 0 0">
-              <img
-                width={48}
-                height={48}
-                src="https://storage.googleapis.com/snuper-static/mock_users/1.svg"
-              />
+              <img width={48} height={48} src={profileImage} />
             </Container>
             <ProfileContent flexColumnCentered>
               <Text fontSize={18} fontWeight={600} margin="0 0 10px 0" block>
-                기길동
+                {name}
               </Text>
               <Text fontSize={15} fontWeight={400}>
-                010-2664-8657
+                {phoneNumber}
               </Text>
             </ProfileContent>
           </Container>
-          <FavoriteContainer width={20} height={20} margin="0 12px 0 0">
+          <FavoriteContainer
+            width={20}
+            height={20}
+            margin="0 12px 0 0"
+            onClick={() => handleToggleFavorite(name)}
+          >
             <img
               src={
                 isFavorite
