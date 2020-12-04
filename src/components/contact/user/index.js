@@ -3,7 +3,9 @@ import Container from '../../atoms/container';
 import Text from '../../atoms/text';
 import { ProfileContainer, ProfileContent, FavoriteContainer } from './style';
 
-const User = () => {
+const User = ({ name, phoneNumber, profileImage }) => {
+  const isFavorite = true;
+
   return (
     <>
       <Container margin="0 0 20px 0">

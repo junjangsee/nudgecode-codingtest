@@ -2,6 +2,7 @@ import React from 'react';
 import Container from '../../components/atoms/container';
 import Text from '../../components/atoms/text';
 import Search from '../../components/contact/search';
+import UserListContainer from '../../containers/userListContainer';
 
 const ContactPage = () => {
   return (
@@ -11,7 +12,7 @@ const ContactPage = () => {
           연락처
         </Text>
         <Search />
-        {/* <User /> */}
+        <UserListContainer />
       </Container>
     </Container>
   );
