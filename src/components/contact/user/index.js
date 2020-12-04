@@ -20,7 +20,7 @@ const User = ({
   };
 
   const handleToggleFavorite = () => {
-    setFavorite(!favorite);
+    setFavorite(() => !favorite);
     handleToggled(name, favorite);
   };
 
@@ -45,7 +45,7 @@ const User = ({
             width={20}
             height={20}
             margin="0 12px 0 0"
-            onClick={() => handleToggleFavorite(name)}
+            onClick={() => handleToggleFavorite()}
           >
             <img
               src={

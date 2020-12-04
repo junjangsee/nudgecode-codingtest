@@ -1,21 +1,7 @@
 import React from 'react';
 import User from '../user';
-import { ContactContext } from '../../../context/contactContext';
 
-const UserList = () => {
-  const [users, setUsers] = React.useContext(ContactContext);
-
-  const handleToggled = (name, favorite) => {
-    const currentUsers = [...users];
-    const user = currentUsers.find((user) => user.name === name);
-    user.isFavorite = favorite;
-    const newUsers = currentUsers;
-
-    window.localStorage.clear();
-    window.localStorage.setItem('users', JSON.stringify(newUsers));
-    setUsers(newUsers);
-  };
-
+const UserList = ({ handleToggled, users }) => {
   return (
     <>
       {users.map((user, index) => (
