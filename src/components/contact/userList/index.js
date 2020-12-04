@@ -6,7 +6,6 @@ const UserList = () => {
   const [users, setUsers] = React.useContext(ContactContext);
 
   const handleToggled = (name, favorite) => {
-    console.log(name);
     const currentUsers = [...users];
     const user = currentUsers.find((user) => user.name === name);
     user.isFavorite = favorite;
