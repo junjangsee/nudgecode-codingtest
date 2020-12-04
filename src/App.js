@@ -1,7 +1,8 @@
 import './App.css';
+import ContactPage from './pages/contactPage';
 
 function App() {
-  return <div className="App">Set up</div>;
+  return <ContactPage />;
 }
 
 export default App;
