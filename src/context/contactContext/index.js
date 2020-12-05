@@ -10,10 +10,7 @@ export const ContactProvider = ({ children }) => {
       try {
         const response = await fetch('http://localhost:4000/user/list');
         const results = await response.json();
-        const sortedResults = results.sort((a, b) =>
-          a.name < b.name ? -1 : a.name > b.name ? 1 : 0,
-        );
-        const initialUsers = sortedResults.map((result) => {
+        const initialUsers = results.map((result) => {
           return {
             ...result,
             isFavorite: false,

@@ -21,7 +21,7 @@ const User = ({
 
   const handleToggleFavorite = () => {
     setFavorite(() => !favorite);
-    handleToggled(name, favorite);
+    handleToggled(name);
   };
 
   return (
