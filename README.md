@@ -7,7 +7,7 @@
 이 프로젝트에 사용된 기술은 다음과 같습니다.
 
 - Language: HTML, CSS, Javascript
-- Library: React, styled-components,
+- Library: React, styled-components
 - Project Setup: CRA
 
 ## 설치 및 실행
@@ -16,7 +16,7 @@
 $ git clone https://github.com/junjangsee/nudgecode-codingtest.git
 $ cd nudgecode-codingtest
 $ npm install
-$ npm run run
+$ npm run start
 ```
 
 ## 프로젝트 구조
