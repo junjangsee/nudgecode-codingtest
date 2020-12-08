@@ -10,8 +10,6 @@ const User = ({
   isFavorite,
   handleToggled,
 }) => {
-  const [favorite, setFavorite] = React.useState(isFavorite);
-
   const makePhoneNumber = (phoneNumber) => {
     return phoneNumber.replace(
       /(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/,
@@ -20,7 +18,6 @@ const User = ({
   };
 
   const handleToggleFavorite = () => {
-    setFavorite(() => !favorite);
     handleToggled(name);
   };
 
